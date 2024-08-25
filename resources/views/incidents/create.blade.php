@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <!-- Card header -->
+                    <!-- Card header incident -->
                     <div class="card-header">
                         <h3 class="mb-0">Enregistrer un nouveau incidents</h3>
                     </div>
