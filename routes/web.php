@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("/message", "HomeController@message")->name("message");
 
     Route::resource('tarifs', 'TarifsController');
-
+//gestion des tarifs
     Route::resource('conflits', 'IncidentsController');
     Route::get("conflits/{id}/resolve", "IncidentsController@resolve")->name("conflits.resolve");
     Route::get("conflits/{id}/print/letter", "IncidentsController@generateLetter")->name("conflist.generateLetter");
