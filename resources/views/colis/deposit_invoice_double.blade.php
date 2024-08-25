@@ -115,7 +115,7 @@
                     {{-- onclick="window.location.href='javascript:history.back()'" --}}
                 </div>
               </div>
-      
+      <!-- fiche de colis -->
             </div>
           </div>
         </div>
