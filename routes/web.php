@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/agentUpdate/{id}', 'AgentController@update')->name('updateAgent');
     Route::post('/agentDestroy/{id}', 'AgentController@destroy')->name('destroyAgent');
 
-    //Suggestions
+    //Suggestionss
     Route::get('/sug', 'HomeController@suggestions')->name('suggestions');
     Route::post('/sug/{id}', 'HomeController@changeSuggestionState')->name('changeState');
 });
