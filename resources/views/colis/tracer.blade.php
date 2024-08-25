@@ -9,6 +9,7 @@
                         <h3 class="mb-0">
                             Trouver un colis
                         </h3>
+                        <!-- consulter le colis -->
                         <p class="text-sm mb-0">
                             Consulter l'etat d'envoi d'un coli
                         </p>
