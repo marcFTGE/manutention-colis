@@ -9,6 +9,7 @@
                         <h3 class="mb-0">
                             Retrait de colis
                         </h3>
+                        <!-- Retrait des colis -->
                         <p class="text-sm mb-0">
                             Gérer les colis à partir de cette interface
                         </p>
