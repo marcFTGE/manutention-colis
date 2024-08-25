@@ -10,7 +10,7 @@
                             Gérer les clients
                         </h3>
                         <p class="text-sm mb-0">
-                            Gérer les clients à partir de cette interface
+                            Gérer les clients à partir de cette interfaces
                         </p>
                     </div>
 
