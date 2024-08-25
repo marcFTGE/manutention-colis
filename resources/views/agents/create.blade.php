@@ -6,7 +6,7 @@
           <div class="card-header bg-white border-0">
             <div class="row align-items-center">
               <div class="col-8">
-                <h3 class="mb-0">Créer les comptes clients, agents et administrateurs</h3>
+                <h3 class="mb-0">Créer les comptess clients, agents et administrateurs</h3>
               </div>
               <div class="col-4 text-right">
                 <a onclick="window.location.href='javascript:history.back()'" class="btn btn-sm btn-primary" style="color:white">Retour</a>
