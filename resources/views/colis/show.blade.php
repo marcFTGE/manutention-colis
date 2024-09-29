@@ -118,8 +118,17 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Statut</label>
+                                        <label>Statut : </label>
                                         {!! $colis->statut == "En attente" ? '<span class="badge badge-default">'.$colis->statut.'</span>' : '<span class="badge badge-success">'.$colis->statut.'</span>' !!}
+        
+                                    </div>
+                                    <div class="form-group"> 
+                                        <label>Date - Heure d'Envoi : </label>
+                                        {!! $colis->hour == "En attente d'envoi" ? '<span class="badge badge-success">'.$colis->hour.'</span>' : '<span class="badge badge-success">'.$colis->hour.'</span>' !!}
+                                    </div>
+                                    <div class="form-group"> 
+                                        <label>Date - Heure de retrait : </label>
+                                        {!! $colis->hours == "En attente d'envoi" ? '<span class="badge badge-success">'.$colis->hours.'</span>' : '<span class="badge badge-danger">'.$colis->hours.'</span>' !!}
                                     </div>
                                 </div>
                             </div>
