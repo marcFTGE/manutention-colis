@@ -39,6 +39,7 @@
             <b>Poids : </b>{{ $colis->poids }} <br />
             <b>Quantité : </b> {{ $colis->quantite }} <br />
             <b>Date d'entrée : </b>{{ $colis->date_entree }} <br />
+            <b>Heure d'entrée : </b>{{ $colis->hour }} <br />
             <b>Date d'arrivée prévue : </b> {{ $colis->date_arrivee }}
         </div>
 
