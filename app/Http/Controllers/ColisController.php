@@ -39,6 +39,7 @@ class ColisController extends Controller
     public function tracer()
     {
         $colis = Colis::where("user_id", auth()->user()->id)
+              ->orWhere("receiver_id", auth()->user()->id)
               ->get();
             //   $id =  auth()->user()->id;
             //   dd($colis);
@@ -57,6 +58,8 @@ class ColisController extends Controller
         ]);
         $month = Carbon::now()->month;
         $formattedDate = Carbon::now()->format('d/m/y');
+        $withdrawalTime = Carbon::now('Europe/Brussels')->format('H:i:s');
+        $colis->hours = Carbon::today()->format('d/m/y')." - ".Carbon::now('Europe/Brussels')->format('H:i:s');
         $colis->statut = "Retiré";
         $details = [
             'title' => 'Votre colis a été livré avec succès',
@@ -67,7 +70,7 @@ class ColisController extends Controller
         $colis->save();
         Mail::to($colis->user->email)->send(new Colis2Mail($details));
         
-        return view('colis.withdrawal_invoice_double', ["colis" => $colis, "formattedDate" => $formattedDate]);
+        return view('colis.withdrawal_invoice_double', ["colis" => $colis, "formattedDate" => $formattedDate, "withdrawalTime" => $withdrawalTime]);
         
     }
 
@@ -105,6 +108,7 @@ class ColisController extends Controller
         $colis = new Colis();
         $colis->country = auth()->user()->country;
         $colis->date_entree = Carbon::today();
+        $colis->hour = "";
         $colis->longueur = $request->longueur;
         $colis->hauteur = $request->hauteur;
         $colis->poids = $request->poids;
@@ -166,7 +170,7 @@ class ColisController extends Controller
             'colis8' => $colis->receiver->password_eph,
             'colis9' => $colis->date_arrivee,
         ];
-        $colis->save();
+       
         // Send email
         Mail::to($colis->receiver->email)->send(new ColisMail($details));
 
@@ -174,6 +178,8 @@ class ColisController extends Controller
 
         $month = Carbon::now();
         $formattedDate = Carbon::now()->format('d/m/y');
+        $colis->hour = Carbon::now()->format('d/m/y')." - ".Carbon::now('Europe/Brussels')->format('H:i:s');
+        $colis->save();
 
         return view('colis.deposit_invoice_double', ["colis" => $colis, "formattedDate" => $formattedDate]);
 
